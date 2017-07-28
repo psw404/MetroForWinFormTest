@@ -1,9 +1,4 @@
-﻿/** 1. 功能：处理数据类型转换，数制转换、编码转换相关的类
- *  2. 作者：周兆坤 
- *  3. 创建日期：2010-3-19
- *  4. 最后修改日期：2010-3-19
-**/
-using System;
+﻿using System;
 using System.Text;
 
 namespace MetroForWinFormTest.Util
