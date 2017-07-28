@@ -35,8 +35,10 @@ namespace MetroForWinFormTest
             player.Play();
             //player.PlayLooping();
             string str = "hello";
+
             string name = MethodBase.GetCurrentMethod().Name;
             Type type = MethodBase.GetCurrentMethod().DeclaringType;
+
             log = LogManager.GetLogger(type);
             log.Info(str);
             log.Warn(str);
