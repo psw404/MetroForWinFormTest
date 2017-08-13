@@ -1,6 +1,6 @@
 ﻿namespace MetroForWinFormTest
 {
-    partial class Form2
+    partial class ErrorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,21 +34,21 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(108, 94);
+            this.metroLabel1.Location = new System.Drawing.Point(94, 130);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(81, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "metroLabel1";
             // 
-            // Form2
+            // ErrorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 342);
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Name = "ErrorForm";
+            this.Text = "Error";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ErrorForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

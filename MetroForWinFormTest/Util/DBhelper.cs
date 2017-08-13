@@ -19,7 +19,8 @@ namespace psw_MahApp.dao
         private SqlCommand comm = null;
         private SqlDataReader reader = null;
 
-        private static volatile DBhelper dbHelper;
+        private static volatile DBhelper instance;
+        private static object syncRoot = new Object();
 
         private DBhelper() { }
 
@@ -29,17 +30,17 @@ namespace psw_MahApp.dao
         /// <returns></returns>
         public static DBhelper GetInstance()
         {
-            if (dbHelper == null)
+            if (instance == null)
             {
-                lock (typeof(DBhelper))
+                lock (syncRoot)
                 {
-                    if (dbHelper == null)
+                    if (instance == null)
                     {
-                        dbHelper = new DBhelper();
+                        instance = new DBhelper();
                     }
                 }
             }
-            return dbHelper;
+            return instance;
         }
 
         /// <summary>

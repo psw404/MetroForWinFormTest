@@ -44,6 +44,7 @@
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -180,11 +181,21 @@
             this.metroButton3.Text = "生成密码";
             this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
             // 
+            // metroButton4
+            // 
+            this.metroButton4.Location = new System.Drawing.Point(23, 405);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(94, 23);
+            this.metroButton4.TabIndex = 14;
+            this.metroButton4.Text = "打开新窗体";
+            this.metroButton4.Click += new System.EventHandler(this.metroButton4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 451);
+            this.Controls.Add(this.metroButton4);
             this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.btnKeepRead);
@@ -202,6 +213,7 @@
             this.Controls.Add(this.metroTile1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +237,7 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton metroButton4;
     }
 }
 

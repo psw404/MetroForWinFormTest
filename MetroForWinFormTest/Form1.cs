@@ -21,16 +21,19 @@ namespace MetroForWinFormTest
         public Form1()
         {
             InitializeComponent();
-            string ip = "10.0.0.2";
-            AdamType series = AdamType.Adam6200;
+            string ip = "192.168.1.3";
+            AdamType series = AdamType.Adam6200; 
             Adam6000Type type = Adam6000Type.Adam6217;
             adamhelper = new AdamHelper(ip, series, type);
+            adamhelper.OnReady(); 
+
+
         }
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
             player = new SoundPlayer();
-            player.SoundLocation = @"E:\迅雷下载\7270.wav";
+            player.SoundLocation = @"..\..\audio\7270.wav";
             player.Load();
             player.Play();
             //player.PlayLooping();
@@ -147,6 +150,14 @@ namespace MetroForWinFormTest
             string pw = Encrypt.Encode(str);
             MessageBox.Show(pw);
             MessageBox.Show(Encrypt.Decode(pw));
+        }
+
+        private void metroButton4_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.Show();
+            Work work = new Work();
+            work.BgStart();
         }
     }
 }

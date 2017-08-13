@@ -31,7 +31,7 @@ namespace PSW2AdamTeach
     {
         #region  字段
         //标志：modbus通信是否已经开始
-        public bool modbusStart { get; set; }
+        private bool modbusStart;
         //接收的数据数量
         public int recCount { get; set; }
         //AdamSocker类型变量
@@ -65,16 +65,17 @@ namespace PSW2AdamTeach
             adamModbus = new AdamSocket();
             slaveIp = ip;
             modbusPort = port;
-            //adamSeries = Advantech.Adam.AdamType.Adam6200;
-
             adamSeries = (Advantech.Adam.AdamType)series;
             adamType = (Advantech.Adam.Adam6000Type)type;
         }
 
+        public AdamHelper(string ip,Adam6000Type type) : this(ip, AdamType.Adam6200, type,502) { }
+        public AdamHelper(string ip) : this(ip, AdamType.Adam6200, Adam6000Type.Adam6217, 502) { }
+
         /// <summary>
         /// 初始化modbus配置
         /// </summary>
-        public void Initalize() 
+        public void Initalize()
         {
             modbusStart = false;
             recCount = 0;

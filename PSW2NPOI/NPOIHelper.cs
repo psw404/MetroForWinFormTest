@@ -25,11 +25,15 @@ namespace PSW2NPOI
         /// 转换datatable数据为Excel表格
         /// </summary>
         /// <param name="dt"></param>
-        public void ConvertTableToExcel(DataTable dt)
+        public void ConvertTableToExcel(DataTable dt,string tableName=null)
         {
             HSSFSheet sheet;
 
-            if (!string.IsNullOrEmpty(dt.TableName))
+            if (!string.IsNullOrEmpty(tableName))
+            {
+                sheet = (HSSFSheet)workBook.CreateSheet(tableName);
+            }
+            else if (!string.IsNullOrEmpty(dt.TableName))
             {
                 sheet = (HSSFSheet)workBook.CreateSheet(dt.TableName);
             }
